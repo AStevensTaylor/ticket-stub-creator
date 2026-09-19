@@ -43,12 +43,14 @@ with static assets.
 
 ## Development
 
+This project uses [Bun](https://bun.sh) as its package manager and script runner.
+
 ```sh
-npm install
-npm run dev        # Vite dev server with the Cloudflare plugin
-npm run build      # type-check and build to dist/
-npm run preview    # preview the production build
-npm run lint
+bun install
+bun run dev        # Vite dev server with the Cloudflare plugin
+bun run build      # type-check and build to dist/
+bun run preview    # preview the production build
+bun run lint
 ```
 
 ## Deploying to Cloudflare Workers
@@ -58,8 +60,8 @@ The app is a static single-page application served through Workers Static Assets
 and answers `/healthz`. Configuration lives in `wrangler.jsonc`.
 
 ```sh
-npx wrangler login   # once
-npm run deploy       # builds, then `wrangler deploy`
+bunx wrangler login  # once
+bun run deploy       # builds, then `wrangler deploy`
 ```
 
 To change the Worker name or add a custom domain, edit `wrangler.jsonc` (see the
